@@ -6,7 +6,7 @@ terragrunt = {
     backend = "s3"
     config {
       encrypt        = true
-      bucket         = "terragrunt-example-staging-terraform-state"
+      bucket         = "terragrunt-priceflow-staging-terraform-state"
       key            = "${path_relative_to_include()}/terraform.tfstate"
       region         = "us-west-2"
       dynamodb_table = "terraform-locks"

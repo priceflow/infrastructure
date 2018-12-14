@@ -2,7 +2,7 @@ terragrunt = {
   # Terragrunt will copy the Terraform configurations specified by the source parameter, along with any files in the
   # working directory, into a temporary folder, and execute your Terraform commands in that folder.
   terraform {
-    source = "git::git@github.com:priceflow/terraform.git//bastion?ref=v0.0.12"
+    source = "git::git@github.com:priceflow/terraform.git//bastion?ref=v0.0.19"
   }
 
   dependencies {
@@ -25,8 +25,6 @@ ssh_user                     = "ubuntu"
 key_name                     = "ccg"
 instance_type                = "t3.small"
 ami                          = "ami-0bbe6b35405ecebdb"     # ubuntu 18.04
-zone_id                      = "Z1NDRCXAVC5GIY"            # priceflow-staging.com
-route53_name                 = "www.priceflow-staging.com"
 tags = {
   Name        = "app-staging-bastion"
   Environment = "staging"

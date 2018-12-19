@@ -23,6 +23,6 @@ terragrunt = {
 name                         = "ftp-lambda"
 app_version                  = "0.0.1"
 tags = {
-  Name        = "app-staging-ftp"
+  Name        = "app-staging-ftp-lambda"
   Environment = "staging"
 }

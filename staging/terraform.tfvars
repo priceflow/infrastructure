@@ -21,4 +21,7 @@ terragrunt = {
       ]
     }
   }
+  terragrunt = {
+    iam_role = "arn:aws:iam::720031351651:user/staging"
+}
 }

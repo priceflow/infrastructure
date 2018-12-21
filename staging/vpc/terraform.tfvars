@@ -16,12 +16,13 @@ terragrunt = {
 # These are the variables we have to pass in to use the module specified in the terragrunt configuration above
 # ---------------------------------------------------------------------------------------------------------------------
 
-name                         = "app-staging"
-cidr                         = "10.10.0.0/16"
+name                             = "app-staging"
+cidr                             = "10.10.0.0/16"
 assign_generated_ipv6_cidr_block = true
 create_database_subnet_group     = true
 enable_nat_gateway               = true
 single_nat_gateway               = true
+enable_s3_endpoint               = true
 
 azs                 = ["us-west-2a", "us-west-2b"]
 private_subnets     = ["10.10.1.0/24", "10.10.2.0/24"]

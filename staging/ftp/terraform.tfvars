@@ -2,7 +2,7 @@ terragrunt = {
   # Terragrunt will copy the Terraform configurations specified by the source parameter, along with any files in the
   # working directory, into a temporary folder, and execute your Terraform commands in that folder.
   terraform {
-    source = "git::git@github.com:priceflow/terraform-ftp.git//?ref=v0.0.7"
+    source = "git::git@github.com:priceflow/terraform-ftp.git//?ref=v0.0.8"
   }
 
   dependencies {
@@ -20,7 +20,7 @@ terragrunt = {
 # These are the variables we have to pass in to use the module specified in the terragrunt configuration above
 # ---------------------------------------------------------------------------------------------------------------------
 
-remote_bucket                = "priceflow-staging-global-state"
+remote_bucket                = "priceflow-staging-terraform-state"
 name                         = "app-staging-ftp"
 ssh_user                     = "ubuntu"
 key_name                     = "staging"

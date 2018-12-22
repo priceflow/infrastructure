@@ -20,6 +20,7 @@ terragrunt = {
 # These are the variables we have to pass in to use the module specified in the terragrunt configuration above
 # ---------------------------------------------------------------------------------------------------------------------
 
+remote_bucket                = "priceflow-staging-global-state"
 name                         = "ftp-lambda"
 app_version                  = "0.0.1"
 tags = {

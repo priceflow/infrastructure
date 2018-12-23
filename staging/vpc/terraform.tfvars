@@ -22,12 +22,10 @@ assign_generated_ipv6_cidr_block = true
 create_database_subnet_group     = true
 enable_nat_gateway               = true
 single_nat_gateway               = true
-enable_s3_endpoint               = true
 
-azs                 = ["us-west-2a", "us-west-2b"]
-private_subnets     = ["10.10.1.0/24", "10.10.2.0/24"]
-public_subnets      = ["10.10.11.0/24", "10.10.12.0/24"]
-database_subnets    = ["10.10.21.0/24", "10.10.22.0/24"]
+azs                 = ["us-west-2a"]
+private_subnets     = ["10.10.1.0/24"]
+public_subnets      = ["10.10.11.0/24"]
 
 assign_generated_ipv6_cidr_block = true
 

@@ -20,18 +20,18 @@ terragrunt = {
 # These are the variables we have to pass in to use the module specified in the terragrunt configuration above
 # ---------------------------------------------------------------------------------------------------------------------
 
-remote_bucket                = "priceflow-production-terraform-state"
-name                         = "app-production-postgrest"
-s3_path                      = "s3://priceflow-production/postgrest/.env"
+remote_bucket                = "priceflow-test-terraform-state"
+name                         = "app-test-postgrest"
+s3_path                      = "s3://priceflow-test/postgrest/.env"
 ssh_user                     = "ubuntu"
-key_name                     = "production"
-stage                        = "production"
+key_name                     = "test"
+stage                        = "test"
 instance_type                = "t3.small"
 ami                          = "ami-036f2557c8e4540aa"
 hosted_zone_id               = "Z2Q7LCZASLCSOC"
 domain_name                  = "priceflow-prod.com"
 num_instances                = "2"
 tags = {
-  Name        = "app-production-postgrest"
-  Environment = "production"
+  Name        = "app-test-postgrest"
+  Environment = "test"
 }

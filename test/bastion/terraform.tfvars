@@ -2,11 +2,11 @@ terragrunt = {
   # Terragrunt will copy the Terraform configurations specified by the source parameter, along with any files in the
   # working directory, into a temporary folder, and execute your Terraform commands in that folder.
   terraform {
-    source = "git::git@github.com:priceflow/terraform-postgrest.git//?ref=v0.0.55"
+    source = "git::git@github.com:priceflow/terraform-bastion.git//?ref=v0.0.5"
   }
 
   dependencies {
-    paths = ["../vpc", "../rds"]
+    paths = ["../vpc"]
   }
 
   # Include all settings from the root terraform.tfvars file
@@ -20,18 +20,13 @@ terragrunt = {
 # These are the variables we have to pass in to use the module specified in the terragrunt configuration above
 # ---------------------------------------------------------------------------------------------------------------------
 
-remote_bucket                = "priceflow-production-terraform-state"
-name                         = "app-production-postgrest"
-s3_path                      = "s3://priceflow-production/postgrest/.env"
+remote_bucket                = "priceflow-test-terraform-state"
+name                         = "app-test-bastion"
 ssh_user                     = "ubuntu"
-key_name                     = "production"
-stage                        = "production"
+key_name                     = "test"
 instance_type                = "t3.small"
-ami                          = "ami-036f2557c8e4540aa"
-hosted_zone_id               = "Z2Q7LCZASLCSOC"
-domain_name                  = "priceflow-prod.com"
-num_instances                = "2"
+ami                          = "ami-0bbe6b35405ecebdb"     # ubuntu 18.04
 tags = {
-  Name        = "app-production-postgrest"
-  Environment = "production"
+  Name        = "app-test-bastion"
+  Environment = "test"
 }

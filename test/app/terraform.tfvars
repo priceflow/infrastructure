@@ -2,11 +2,11 @@ terragrunt = {
   # Terragrunt will copy the Terraform configurations specified by the source parameter, along with any files in the
   # working directory, into a temporary folder, and execute your Terraform commands in that folder.
   terraform {
-    source = "git::git@github.com:priceflow/terraform-postgrest.git//?ref=v0.0.55"
+    source = "git::git@github.com:priceflow/terraform-app.git//?ref=v0.0.8"
   }
 
   dependencies {
-    paths = ["../vpc", "../rds"]
+    paths = ["../vpc", "../rds", "../postgrest"]
   }
 
   # Include all settings from the root terraform.tfvars file
@@ -20,18 +20,18 @@ terragrunt = {
 # These are the variables we have to pass in to use the module specified in the terragrunt configuration above
 # ---------------------------------------------------------------------------------------------------------------------
 
-remote_bucket                = "priceflow-production-terraform-state"
-name                         = "app-production-postgrest"
-s3_path                      = "s3://priceflow-production/postgrest/.env"
-ssh_user                     = "ubuntu"
-key_name                     = "production"
-stage                        = "production"
+remote_bucket                = "priceflow-test-terraform-state"
+namespace                    = "app"
+name                         = "app-test-eb"
+stage                        = "test"
+zone_id                      = "Z2Q7LCZASLCSOC"
+key_name                     = "test"
 instance_type                = "t3.small"
-ami                          = "ami-036f2557c8e4540aa"
-hosted_zone_id               = "Z2Q7LCZASLCSOC"
-domain_name                  = "priceflow-prod.com"
-num_instances                = "2"
-tags = {
-  Name        = "app-production-postgrest"
-  Environment = "production"
-}
+autoscale_min                = 1
+autoscale_max                = 2
+updating_min_in_service      = 0
+updating_max_batch           = 1
+
+loadbalancer_type            = "application"
+solution_stack_name = "64bit Amazon Linux 2018.03 v2.12.2 running Docker 18.03.1-ce"
+

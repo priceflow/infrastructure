@@ -1,7 +1,7 @@
 # Terragrunt is a thin wrapper for Terraform that provides extra tools for working with multiple Terraform modules,
 # remote state, and locking: https://github.com/gruntwork-io/terragrunt
 terragrunt = {
-  iam_role = "arn:aws:iam::526837547890:role/priceflow"
+  iam_role = "arn:aws:iam::450807677597:role/priceflow"
   # Configure Terragrunt to automatically store tfstate files in an S3 bucket
   remote_state {
     backend = "s3"

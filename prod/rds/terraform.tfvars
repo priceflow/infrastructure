@@ -23,7 +23,7 @@ terragrunt = {
 remote_bucket  = "priceflow-production-terraform-state"
 name           = "app-production-rds"
 rds_snapshot   = "app-production-rds"
-instance_class = "db.t3.medium"
+instance_class = "db.t2.medium"
 
 tags = {
   Name        = "app-production-rds"

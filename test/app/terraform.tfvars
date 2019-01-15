@@ -2,7 +2,7 @@ terragrunt = {
   # Terragrunt will copy the Terraform configurations specified by the source parameter, along with any files in the
   # working directory, into a temporary folder, and execute your Terraform commands in that folder.
   terraform {
-    source = "git::git@github.com:priceflow/terraform-app.git//?ref=v0.0.8"
+    source = "git::git@github.com:priceflow/terraform-app.git//?ref=v0.0.18"
   }
 
   dependencies {
@@ -24,9 +24,9 @@ remote_bucket                = "priceflow-test-terraform-state"
 namespace                    = "app"
 name                         = "app-test-eb"
 stage                        = "test"
-zone_id                      = "Z2Q7LCZASLCSOC"
+zone_id                      = "Z2UJAOBF8HE730"
 key_name                     = "test"
-instance_type                = "t3.small"
+instance_type                = "t3.micro"
 autoscale_min                = 1
 autoscale_max                = 2
 updating_min_in_service      = 0

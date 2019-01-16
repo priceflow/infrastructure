@@ -2,7 +2,7 @@ terragrunt = {
   # Terragrunt will copy the Terraform configurations specified by the source parameter, along with any files in the
   # working directory, into a temporary folder, and execute your Terraform commands in that folder.
   terraform {
-    source = "git::git@github.com:priceflow/terraform-postgrest.git//?ref=v0.0.66"
+    source = "git::git@github.com:priceflow/terraform-postgrest.git//?ref=v0.0.67"
   }
 
   dependencies {
@@ -26,7 +26,7 @@ s3_path                      = "s3://priceflow-production/postgrest/.env"
 ssh_user                     = "ubuntu"
 key_name                     = "production"
 stage                        = "production"
-instance_type                = "t3.small"
+instance_type                = "t3.micro"
 ami                          = "ami-036f2557c8e4540aa"
 hosted_zone_id               = "Z2Q7LCZASLCSOC"
 domain_name                  = "priceflow-prod.com"

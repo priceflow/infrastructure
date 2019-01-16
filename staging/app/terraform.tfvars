@@ -2,7 +2,7 @@ terragrunt = {
   # Terragrunt will copy the Terraform configurations specified by the source parameter, along with any files in the
   # working directory, into a temporary folder, and execute your Terraform commands in that folder.
   terraform {
-    source = "git::git@github.com:priceflow/terraform-app.git//?ref=v0.0.20"
+    source = "git::git@github.com:priceflow/terraform-app.git//?ref=v0.0.30"
   }
 
   dependencies {
@@ -25,8 +25,10 @@ namespace                    = "app"
 name                         = "app-staging-eb"
 stage                        = "staging"
 zone_id                      = "Z3IM1899GSG1K1"
+domain_name                  = "priceflow-staging.com"
+subject_alternative_names    = ["app.priceflow-staging.com"]
 key_name                     = "staging"
-instance_type                = "t3.micro"
+instance_type                = "t3.small"
 autoscale_min                = 1
 autoscale_max                = 2
 updating_min_in_service      = 0

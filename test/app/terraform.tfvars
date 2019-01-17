@@ -2,11 +2,11 @@ terragrunt = {
   # Terragrunt will copy the Terraform configurations specified by the source parameter, along with any files in the
   # working directory, into a temporary folder, and execute your Terraform commands in that folder.
   terraform {
-    source = "git::git@github.com:priceflow/terraform-app.git//?ref=v0.0.40"
+    source = "git::git@github.com:priceflow/terraform-app.git//?ref=v0.0.42"
   }
 
   dependencies {
-    paths = ["../vpc", "../rds", "../postgrest"]
+    paths = ["../vpc", "../rds", "../bastion", "../postgrest"]
   }
 
   # Include all settings from the root terraform.tfvars file

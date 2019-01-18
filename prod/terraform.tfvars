@@ -18,7 +18,8 @@ terragrunt = {
     extra_arguments "bucket" {
       commands = ["${get_terraform_commands_that_need_vars()}"]
       optional_var_files = [
-          "${get_tfvars_dir()}/${find_in_parent_folders("account.tfvars", "ignore")}"
+          "${get_tfvars_dir()}/${find_in_parent_folders("account.tfvars", "ignore")}",
+          "${get_tfvars_dir()}/${find_in_parent_folders("db.tfvars", "ignore")}"
       ]
     }
   }

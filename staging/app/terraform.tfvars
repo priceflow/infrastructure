@@ -2,11 +2,11 @@ terragrunt = {
   # Terragrunt will copy the Terraform configurations specified by the source parameter, along with any files in the
   # working directory, into a temporary folder, and execute your Terraform commands in that folder.
   terraform {
-    source = "git::git@github.com:priceflow/terraform-app.git//?ref=v0.0.49"
+    source = "git::git@github.com:priceflow/terraform-app.git//?ref=v0.0.54"
   }
 
   dependencies {
-    paths = ["../vpc", "../rds", "../bastion", "../postgrest", "../cert"]
+    paths = ["../postgrest", "../cert"]
   }
 
   # Include all settings from the root terraform.tfvars file
@@ -24,6 +24,7 @@ remote_bucket                = "priceflow-staging-terraform-state"
 namespace                    = "app"
 name                         = "app-staging-eb"
 stage                        = "staging"
+zone_id                      = "Z3IM1899GSG1K1"
 domain_name                  = "priceflow-staging.com"
 subject_alternative_names    = ["app.priceflow-staging.com"]
 key_name                     = "staging"

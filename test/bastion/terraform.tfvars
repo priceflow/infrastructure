@@ -6,7 +6,7 @@ terragrunt = {
   }
 
   dependencies {
-    paths = ["../vpc", "../rds"]
+    paths = ["../cert"]
   }
 
   # Include all settings from the root terraform.tfvars file

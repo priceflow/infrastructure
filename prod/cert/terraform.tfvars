@@ -2,11 +2,11 @@ terragrunt = {
   # Terragrunt will copy the Terraform configurations specified by the source parameter, along with any files in the
   # working directory, into a temporary folder, and execute your Terraform commands in that folder.
   terraform {
-    source = "git::git@github.com:priceflow/terraform-acm-certificate.git//?ref=v0.0.5"
+    source = "git::git@github.com:priceflow/terraform-acm-certificate.git//?ref=v0.0.9"
   }
 
   dependencies {
-    paths = ["../vpc"]
+    paths = ["../rds"]
   }
 
   # Include all settings from the root terraform.tfvars file
@@ -23,5 +23,5 @@ terragrunt = {
 remote_bucket                     = "priceflow-production-terraform-state"
 domain_name                       = "priceflow-prod.com"
 zone_id                           = "Z2Q7LCZASLCSOC"
-subject_alternative_names         = ["*.priceflow-prod.com"]
+subject_alternative_names         = ["*.priceflow-prod.com", "*.app.priceflow-prod.com"]
 

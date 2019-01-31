@@ -2,7 +2,7 @@ terragrunt = {
   # Terragrunt will copy the Terraform configurations specified by the source parameter, along with any files in the
   # working directory, into a temporary folder, and execute your Terraform commands in that folder.
   terraform {
-    source = "git::git@github.com:priceflow/terraform-bastion.git//?ref=v0.0.32"
+    source = "git::git@github.com:priceflow/terraform-bastion.git//?ref=v0.0.36"
   }
 
   dependencies {
@@ -25,6 +25,7 @@ name                         = "app-test-bastion"
 ssh_user                     = "ubuntu"
 key_name                     = "test"
 instance_type                = "t3.small"
+stage                        = "test"
 ami                          = "ami-0bbe6b35405ecebdb"     # ubuntu 18.04
 tags = {
   Name        = "app-test-bastion"
